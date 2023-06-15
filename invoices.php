@@ -27,7 +27,7 @@
 									<th class="text-center">#</th>
 									<th class="">Date</th>
 									<th class="">Tenant</th>
-									<th class="">Comment</th>
+									<th class="">Description</th>
 									<th class="">Rent</th>
 									<th class="">Vat</th>
 									<th class="">Service Charge</th>

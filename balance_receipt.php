@@ -1,4 +1,6 @@
 <?php include 'db_connect.php' ?>
+
+
 <style>
 	.on-print{
 		display: none;
@@ -34,15 +36,6 @@
 	
 		
 		
-		th {
-			border-top-style: solid;
-			border-bottom-style: solid;
-			width: 10px;
-		}
-		tr,td{
-			border-spacing: 50px;
-			border-top-style: dashed ;
-		}
 	</style>
 </noscript>
 <div class="container-fluid">
@@ -76,11 +69,16 @@
 
 											<div style="display: table-cell; text-align: right;"> 
 												<p><b>CHAKA ROAD MALL </b> <br>
+												P.O. Box 70207-00400,<br>
+												
 												Chaka road,<br>
-												Nairobi,<br>
-												Kenya.</p>
+												Kilimani,<br>
+												Nairobi.</p>
 												<p>
-													<em>www.chakaroadmall.com</em> <br>
+												0725100690.<br>
+												</p>
+												<p>
+												
 													<em>info@chakaroadmall.com</em>
 												</p>
 											</div>
@@ -91,7 +89,7 @@
 
 
 							
-							<div style="margin-top: -150px; margin-bottom: -183px; margin-left: 0px; max-width: 50px; position: center;">
+							<div style="margin-top: -220px; margin-bottom: -183px; margin-left: 0px; max-width: 50px; position: center;">
 								<img src="images/img-3.png" width="850px;"  height="400px;">
 							</div>
 							<div style="text-align: center; padding-bottom: 50px; color: #cccccc;"> 
@@ -138,7 +136,7 @@
 											
 												<p>
 													
-													TO:
+													BILL TO:
 											</div>
 											       
 													<b><?php echo $row['name'] ?> </b> <br>
@@ -161,20 +159,16 @@
 <!----------------------------------END OF STYLING TOP PART------------------------->
 
 
+<div class="container-fluid">
+	<div class="col-lg-12">
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-12">
+					
 									<div style="margin-top: 20px">
-										
-										<table class="table table-bordered">
-											<thead>
-												<tr>
-													
-													<th>Rent</th>
-													<th>Vat</th>
-													<th>Service Charge</th>
-													<th>Total</th>
-													
-												</tr>
-											</thead>
-											<tbody>
+										<table class="table ">
+											
+											<hr>
 												<?php 
 												$payment_id = $_GET['id'];
 												$i = 1;
@@ -197,33 +191,83 @@
 
 													
 												?>
-												<tr>
-					
-													<td class="text-center"><?php echo number_format($row['price'],2) ?></td>
-													<td class="text-center"><?php echo number_format($row['price'],2) ?></td>
-													<td class="text-center"><?php echo number_format($row['price'],2) ?></td>
-												</tr>
-								
-												
-								<tr>
-									<td  ><b> Rent  </b></b></td>
-									<td class="text-center"><?php echo number_format($outstanding,2) ?></td>
-									
-								</tr>
-								<tr>
-									<td class="text-right" colspan="3" style="text-align: right; "><b> Vat   </b></td>
-									<td class="text-center"><?php echo number_format($outstanding,2) ?></td>
-								</tr>
-								<tr>
-									<P><td class="text-right" colspan="3" style="text-align: right; "><b> Service  </b></P></td>
-									<td class="text-center"><?php echo number_format($outstanding,2) ?></td>
-								</tr>
-												<br>
-								<tr>
-									<td class="text-right" colspan="3" style="text-align: right; border-bottom-style: solid;"><b>Total Balance  </b></td>
-									<td class="text-center"><?php echo number_format($outstanding,2) ?></td>
-								</tr>
 
+
+
+									<div style="width: 100%; display: table;">
+										<div style="display: table-row">
+											<div style="width: 600px; display: table-cell;" class="nav" display="flex"> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Rent </b> <br>
+												<hr>
+												<p><?php echo number_format($row['price'],2) ?></p>
+												<hr>
+												
+												
+												
+												
+												
+												</div>
+											</div>
+<hr>
+											<div style="width: 600px; display: table-cell;" class="nav" display="flex"> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Vat </b> <br>
+												<hr>
+												<p><?php echo number_format($row['price'],2) ?></p>
+												<hr>
+												
+												
+												
+												</div>
+											</div>
+<hr>
+											<div style="width: 600px; display: table-cell;" class="nav" display="flex"> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Service Charge </b> <br>
+												<hr>
+												<p><?php echo number_format($row['price'],2) ?></p>
+												<hr>
+												<p><b>Rent </b> <br>
+												<hr>
+												<p><b>Vat </b> <br>
+												<hr>
+												<p><b>Service Charge </b> <br>
+												<hr>
+												<p><b>TOTAL BALANCE </b> <br>
+												<hr>
+												
+												<hr>
+												
+												</div>
+											</div>
+
+
+											
+
+
+											<div style="display: table-cell; text-align: right;"> 
+											<p><b>Amount </b> <br>
+											<hr>
+												<p>.</p>
+												<hr>
+												<p><?php echo number_format($outstanding,2) ?> <br>
+												<hr>
+												<p><?php echo number_format($outstanding,2) ?> <br>
+												<hr>
+												<p><?php echo number_format($outstanding,2) ?> <br>
+												<hr>
+												<p><b><?php echo number_format($outstanding,2) ?> </b> <br>
+												<hr>
+												<hr>
+											</div>
+										</div>
+									</div>
+
+
+
+												
+								
 												<?php endwhile; ?>
 												<?php else: ?>
 													<tr>
@@ -242,7 +286,7 @@
 									<div 
 										<p> Welcome to Chaka Road Mall </p>
 									</div>
-									<div style="padding-top: 50px; text-align: center; color: #cccccc;"> 
+									<div style="padding-top: 260px; text-align: center; color: #cccccc;"> 
 											<p>Thank You</p> 
 
 									</div>
@@ -250,7 +294,12 @@
 									</div>
 								</div>								
 							</div>
-</div>
+						</div>
+					</div>
+				</div>
+		    </div>
+		</div>
+	</div>
 
 
 

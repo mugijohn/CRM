@@ -59,7 +59,8 @@
 										<th>Service Fee Paid</th>
 										<th>Rent Bal</th>
 										<th>Vat Bal</th>
-										<th>Service Fee Bal</th>							
+										<th>Service Fee Bal</th>
+										<th>Description</th>							
 										<th>Last Payment</th>
 										<th>Action</th>
 									</tr>
@@ -112,6 +113,7 @@
 										<td class="text-right"><?php echo number_format($outstanding_rent,2) ?></td>
 										<td class="text-right"><?php echo number_format($outstanding_rent,2) ?></td>
 										<td class="text-right"><?php echo number_format($outstanding_rent,2) ?></td>
+										<td><?php echo $row['invoice'] ?></td>
 										<td><?php echo date('M d,Y',strtotime($last_payment)) ?></td>
 										
 										<td>

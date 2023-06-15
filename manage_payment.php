@@ -28,11 +28,15 @@ foreach($qry->fetch_array() as $k => $val){
             
         </div>
         <div class="form-group">
-            <label for="" class="control-label">Payment Type: </label>
+            <label for="" class="control-label">Description: </label>
+            <input type="text" class="form-control" name="description"  value="<?php echo isset($description) ? $description :'' ?>" >
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label">Comment: </label>
             <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
         </div>
       <div class="form-group">
-            <label for="" class="control-label">Amount Paid: </label>
+            <label for="" class="control-label">Rent: </label>
             <input type="number" class="form-control text-right" step="any" name="amount"  value="<?php echo isset($amount) ? $amount :'' ?>" >
         </div>
         <div class="form-group">
