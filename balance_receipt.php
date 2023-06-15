@@ -68,7 +68,7 @@
 											</div>
 
 											<div style="display: table-cell; text-align: right;"> 
-												<p><b>CHAKA ROAD MALL </b> <br>
+												<b>CHAKA ROAD MALL </b> <br>
 												P.O. Box 70207-00400,<br>
 												
 												Chaka road,<br>
@@ -89,8 +89,8 @@
 
 
 							
-							<div style="margin-top: -220px; margin-bottom: -183px; margin-left: 0px; max-width: 50px; position: center;">
-								<img src="images/img-3.png" width="850px;"  height="400px;">
+							<div style="margin-top: -220px; margin-bottom: -183px; margin-left: 0px; width: 150px; ">
+								<img src="images/img-4.png" width="850px;"  height="400px;">
 							</div>
 							<div style="text-align: center; padding-bottom: 50px; color: #cccccc;"> 
 								<p>Chaka Road Mall</p>
@@ -139,7 +139,7 @@
 													BILL TO:
 											</div>
 											       
-													<b><?php echo $row['name'] ?> </b> <br>
+													<b><?php echo $row['name'] ?> </b> <br></p>
 													<?php echo $row['contact'] ?>.<br></p>
 													<?php echo $row['email'] ?>.<br></p>
 													<?php echo $row['house_no'] ?>
@@ -149,7 +149,7 @@
 
 										</div>
 									</div>							
-
+<hr>
 									<?php endwhile; ?>
 									<?php else: ?>
 										<tr>
@@ -168,7 +168,7 @@
 									<div style="margin-top: 20px">
 										<table class="table ">
 											
-											<hr>
+											
 												<?php 
 												$payment_id = $_GET['id'];
 												$i = 1;
@@ -286,7 +286,7 @@
 									<div 
 										<p> Welcome to Chaka Road Mall </p>
 									</div>
-									<div style="padding-top: 260px; text-align: center; color: #cccccc;"> 
+									<div style="padding-top: 250px; text-align: center; color: #cccccc;"> 
 											<p>Thank You</p> 
 
 									</div>

@@ -71,12 +71,17 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 											</div>
 
 											<div style="display: table-cell; text-align: right;"> 
-												<p><b>CHAKA ROAD MALL </b> <br>
+											<p><b>CHAKA ROAD MALL </b> <br>
+												P.O. Box 70207-00400,<br>
+												
 												Chaka road,<br>
-												Nairobi,<br>
-												Kenya.</p>
+												Kilimani,<br>
+												Nairobi.</p>
 												<p>
-													<em>www.chakaroadmall.com</em> <br>
+												0725100690.<br>
+												</p>
+												<p>
+												
 													<em>info@chakaroadmall.com</em>
 												</p>
 											</div>
@@ -87,9 +92,10 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 
 
 							
-                              <div style="margin-top: -100px; margin-bottom: -565px; margin-left: -198px; max-width: 50px; position: center;">
+                              <div style="margin-top: -200px; margin-bottom: -565px; margin-left: -211px; width: 100px; position: center;">
 								<img src="images/img-7.png" width="1517px;"  height="750px;">
 							</div>
+							
 							<div style="text-align: center; margin-top: 85px; color: #cccccc;"> 
 								<p>Chaka Road Mall</p>
 							</div>
@@ -131,16 +137,16 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 											<div style="width: 300px; display: table-cell; " class="nav" display="flex">
 											<div style="color: #cccccc">`
 												<p>
-													TO:
+													RECEIPT TO:
 											</div>
-													<b><?php echo $row['name'] ?> </b> <br>
+													<b><?php echo $row['name'] ?> </b> <br></p>
 													<?php echo $row['contact'] ?>.<br></p>
 													<?php echo $row['email'] ?>.<br></p>
 											</div>
 
 										</div>
 									</div>							
-
+<hr>
 									<?php endwhile; ?>
 									<?php else: ?>
 										<tr>
@@ -153,16 +159,7 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										<div style="margin-top: 20px">
 										
 										<table class="table">
-										<thead>
-									<tr>
 										
-										<th>Date</th>
-										<th>Store #</th>
-										<th>Payment Type</th>
-										
-									</tr>
-							        </thead>
-								   <tbody>
 											<?php 
 									$payment_id = $_GET['id'];
 									$i = 1;
@@ -176,19 +173,60 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 									while($row=$payments->fetch_assoc()):
 										$tamount += $row['amount'];
 									?>
-									<tr>
-										
-										
-										
-										<td class="text-center"><?php echo date('M d,Y',strtotime($row['date_created'])) ?></td>
-										<td class="text-center"><?php echo $row['house_no'] ?></td>
-										<td class="text-center"><?php echo $row['invoice'] ?></td>
-										
-									</tr>
-									<tr>
-									<td class="text-center" colspan="2" style="text-align: right; "><b> VAT  </b></td>
-									<td class="text-center"><?php echo number_format($row['vat_paid'],2) ?></td>
-								    </tr>
+									
+
+									<div style="width: 100%; display: table;">
+										<div style="display: table-row">
+											<div style="width: 600px; display: table-cell;" class="nav" display="flex"> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Description</b> <br>
+												<hr>
+												<p><?php echo $row['invoice'] ?></p>
+												<hr>
+												
+												
+												
+												
+												
+												</div>
+											</div>
+<hr>
+											
+<hr>
+											<div style="width: 600px; display: table-cell;" class="nav" display=""> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Store No </b> <br>
+												<hr>
+												<p><?php echo $row['house_no'] ?></p>
+												<hr>
+												<p><b>TOTAL BALANCE </b> <br>
+												<hr>
+												
+												<hr>
+												
+												</div>
+											</div>
+
+
+											
+
+
+											<div style="display: table-cell; " display="flex"> 
+											<div style="margin-right: 0px; margin-left: 0px;">
+											<p><b>Vat </b> <br>
+											<hr>
+												<p>.</p>
+												
+												<hr>
+												<p><b><?php echo number_format($row['vat_paid'],2) ?></b> <br>
+												<hr>
+												<hr>
+											</div>
+										</div>
+									</div>
+
+									
+									
 								
 								<?php endwhile; ?>
 								<?php else: ?>
@@ -201,14 +239,15 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 
 										<br>
 										<br>
-									<div style="display: table-cell; text-align: right;"> 
+									<div style="display: table-cell; text-align: right; padding-top: 20px;"> 
 											<p><b>Notes / Terms </b> 
 
 									</div>
 									<div 
-										<p> Thank you </p>
+										<p> Welcome to Chaka Road Mall </p>
 									</div>
-									<div style="padding-top: 50px; text-align: center; color: #cccccc;"> 
+									
+									<div style="padding-top: 650px; text-align: center; color: #cccccc;"> 
 											<p>Thank You</p> 
 
 									</div>
