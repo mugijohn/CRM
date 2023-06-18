@@ -108,7 +108,7 @@
                                                 $rent_total += $row['amount'];
                                                 $vat_total += $row['vat_paid'];
 										        $servive_charge_total += $row['service_charge_paid'];
-                                                $total_amount =  $rent_total + $vat_total + $servive_charge_total
+                                                $month_total = $rent_total + $vat_total + $servive_charge_total
                                             ?>
                                             <?php 
                                              //echo 'KES: '. number_format($tamount,2);
@@ -122,7 +122,7 @@
                                             </tr>
                                         <?php endif; ?>
                                           <?php 
-                                             echo 'KES: '. number_format( $total_amount ,2);
+                                             echo 'KES: '. number_format($month_total ,2);
                                              //echo $payment->num_rows > 0 ? number_format($tamount,2) : 0;
                                              ?>
                                         </b></h4>

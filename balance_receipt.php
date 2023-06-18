@@ -67,7 +67,7 @@
 												</div>
 											</div>
 
-											<div style="display: table-cell; text-align: right;"> 
+											<div style="display: table-cell; text-align: right; "> 
 												<b>CHAKA ROAD MALL </b> <br>
 												P.O. Box 70207-00400,<br>
 												
@@ -89,11 +89,19 @@
 
 
 							
-							<div style="margin-top: -220px; margin-bottom: -183px; margin-left: 0px; width: 150px; ">
-								<img src="images/img-4.png" width="850px;"  height="400px;">
+							<div style=" width: 100%; display: table">
+								<div style="display: table-row">
+									<div style=" display: table-cell;" class="nav" display="auto"> 
+										<div style="margin-top: -90px; margin-bottom: -150px; margin-left:;">
+											<img src="images/img-10.png" width="100%;"  height="100%;" display="table-row; " position="center; ">
+										</div>
+									</div>
+								</div>
 							</div>
-							<div style="text-align: center; padding-bottom: 50px; color: #cccccc;"> 
-								<p>Chaka Road Mall</p>
+							<div style="text-align: center; padding-bottom: 80px; color: #cccccc;"> 
+								<div style="margin-top: -63px; margin-bottom: -150px; margin-left:;">
+									<p>Chaka Road Mall</p>
+								</div>
 							</div>
 
 
@@ -234,7 +242,7 @@
 												<hr>
 												<p><b>Service Charge </b> <br>
 												<hr>
-												<p><b>TOTAL BALANCE </b> <br>
+												<p><b>TOTAL BAL </b> <br>
 												<hr>
 												
 												<hr>
@@ -286,7 +294,9 @@
 									<div 
 										<p> Welcome to Chaka Road Mall </p>
 									</div>
-									<div style="padding-top: 250px; text-align: center; color: #cccccc;"> 
+									<div style="padding-top: 15
+									
+									0px; text-align: center; color: #cccccc;"> 
 											<p>Thank You</p> 
 
 									</div>

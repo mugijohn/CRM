@@ -4,6 +4,27 @@
 $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <title>Document</title>
+      <style>
+        .result{
+         color:red;
+        }
+        td
+        {
+          text-align:center;
+        }
+      </style>
+   </head>
 <style>
 	.on-print{
 		display: none;
@@ -36,11 +57,18 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 			width: 100%;
 			border-collapse: collapse
 		}
-		tr,td,th{
-			border:1px solid black;
+		th {
+			border-top-style: solid;
+			border-bottom-style: solid;
+			border-spacing: 50px;
+		}
+		tr,td{
+			border-spacing: 50px;
+			border-top-style: dotted;
 		}
 	</style>
 </noscript>
+<body>
 <div class="container-fluid">
 	<div class="col-lg-12">
 		<div class="card">
@@ -71,12 +99,17 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 											</div>
 
 											<div style="display: table-cell; text-align: right;"> 
-												<p><b>CHAKA ROAD MALL </b> <br>
+											<p><b>CHAKA ROAD MALL </b> <br>
+												P.O. Box 70207-00400,<br>
+												
 												Chaka road,<br>
-												Nairobi,<br>
-												Kenya.</p>
+												Kilimani,<br>
+												Nairobi.</p>
 												<p>
-													<em>www.chakaroadmall.com</em> <br>
+												0725100690.<br>
+												</p>
+												<p>
+												
 													<em>info@chakaroadmall.com</em>
 												</p>
 											</div>
@@ -87,9 +120,10 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 
 
 							
-                              <div style="margin-top: -100px; margin-bottom: -565px; margin-left: -198px; max-width: 50px; position: center;">
+                              <div style="margin-top: -200px; margin-bottom: -565px; margin-left: -211px; width: 100px; position: center;">
 								<img src="images/img-7.png" width="1517px;"  height="750px;">
 							</div>
+							
 							<div style="text-align: center; margin-top: 85px; color: #cccccc;"> 
 								<p>Chaka Road Mall</p>
 							</div>
@@ -131,16 +165,16 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 											<div style="width: 300px; display: table-cell; " class="nav" display="flex">
 											<div style="color: #cccccc">`
 												<p>
-													TO:
+													RECEIPT TO:
 											</div>
-													<b><?php echo $row['name'] ?> </b> <br>
+													<b><?php echo $row['name'] ?> </b> <br></p>
 													<?php echo $row['contact'] ?>.<br></p>
 													<?php echo $row['email'] ?>.<br></p>
 											</div>
 
 										</div>
 									</div>							
-
+<hr>
 									<?php endwhile; ?>
 									<?php else: ?>
 										<tr>
@@ -153,16 +187,7 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										<div style="margin-top: 20px">
 										
 										<table class="table">
-										<thead>
-									<tr>
 										
-										<th>Date</th>
-										<th>Store #</th>
-										<th>Comment</th>
-										
-									</tr>
-							        </thead>
-								   <tbody>
 											<?php 
 									$payment_id = $_GET['id'];
 									$i = 1;
@@ -176,19 +201,60 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 									while($row=$payments->fetch_assoc()):
 										$tamount += $row['amount'];
 									?>
-									<tr>
-										
-										
-										
-										<td class="text-center"><?php echo date('M d,Y',strtotime($row['date_created'])) ?></td>
-										<td class="text-center"><?php echo $row['house_no'] ?></td>
-										<td class="text-center"><?php echo $row['invoice'] ?></td>
-										
-									</tr>
-									<tr>
-									<td class="text-center" colspan="2" style="text-align: right; "><b> Service Charge  </b></td>
-									<td class="text-center"><?php echo number_format($row['service_charge_paid'],2) ?></td>
-								    </tr>
+									
+
+									<div style="width: 100%; display: table;">
+										<div style="display: table-row">
+											<div style="width: 600px; display: table-cell;" class="nav" display="flex"> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Description</b> <br>
+												<hr>
+												<p><?php echo $row['invoice'] ?></p>
+												<hr>
+												
+												
+												
+												
+												
+												</div>
+											</div>
+<hr>
+											
+<hr>
+											<div style="width: 600px; display: table-cell;" class="nav" display=""> 
+												<div style="margin-top: 0px; margin-left: 0px;">
+												<p><b>Store No </b> <br>
+												<hr>
+												<p><?php echo $row['house_no'] ?></p>
+												<hr>
+												<p><b>TOTAL PAID </b> <br>
+												<hr>
+												
+												<hr>
+												
+												</div>
+											</div>
+
+
+											
+
+
+											<div style="display: table-cell; " display="flex"> 
+											<div style="margin-right: 0px; margin-left: 0px;">
+											<p><b>Service_Charge</b> <br>
+											<hr>
+												<p>.</p>
+												
+												<hr>
+												<p><b><?php echo number_format($row['service_charge_paid'],2) ?></b> <br>
+												<hr>
+												<hr>
+											</div>
+										</div>
+									</div>
+
+									
+									
 								
 								<?php endwhile; ?>
 								<?php else: ?>
@@ -201,14 +267,15 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 
 										<br>
 										<br>
-									<div style="display: table-cell; text-align: right;"> 
+									<div style="display: table-cell; text-align: right; padding-top: 20px;"> 
 											<p><b>Notes / Terms </b> 
 
 									</div>
 									<div 
-										<p> Thank you </p>
+										<p> Welcome to Chaka Road Mall </p>
 									</div>
-									<div style="padding-top: 50px; text-align: center; color: #cccccc;"> 
+									
+									<div style="padding-top: 650px; text-align: center; color: #cccccc;"> 
 											<p>Thank You</p> 
 
 									</div>
@@ -218,13 +285,30 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 							</div>
 </div>
 
+<!----------------------------------PRINT PAGE END------------------------->
 
-
-	                  <!---------------------------------USER VIEW TABLE---->					 
-					  <div class="row">
+<!---------------------------------USER VIEW TABLE------------------------->					 
+                       <div class="row">
 						<div class="receipt-txt" >
 							
 						</div>
+<!----------------------------------Email------------------------->
+
+<form class="" action="send.php" method="post">
+	Email <input type="email" name="email" value=""> <br>
+	Subject <input type="text" name="subject" value=""> <br>
+	Message <input type="text" name="message" value=""> <br>
+
+	<button type="submit" name="send">Send</button>
+</form>
+
+
+
+
+
+
+
+<!----------------------------------Email End------------------------->
 						<table class="table table-bordered">
 							<thead>
 							<tr>
@@ -233,8 +317,8 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										<th>Date</th>
 										<th>Tenant</th>
 										<th>Store #</th>
-										<th>Comment</th>
-										<th>Service Charge</th>
+										<th>Payment Code</th>
+										<th>Rent</th>
 									</tr>
 							</thead>
 							<tbody>
@@ -296,3 +380,5 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 		location.href = 'index.php?page=payment_report&'+$(this).serialize()
 	})
 </script>
+</body>
+</html>

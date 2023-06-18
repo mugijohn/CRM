@@ -31,7 +31,7 @@
 									<th class="">Rent</th>
 									<th class="">Vat</th>
 									<th class="">Service Charge</th>
-									<th class="">Total Paid</th>
+									
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
@@ -63,9 +63,7 @@
 									<td class="text-right">
 										 <p> <b><?php echo number_format($row['service_charge_paid'],2) ?></b></p>
 									</td>
-									<td class="text-right">
-										 <p> <b><?php echo number_format($row['vat_paid'],2) ?></b></p>
-									</td>
+									
 									
 									<td class="text-center">
 										<button class="btn btn-sm btn-outline-primary edit_invoice" type="button" data-id="<?php echo $row['id'] ?>" >Edit</button>

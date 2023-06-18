@@ -24,11 +24,9 @@
 	</style>
 </noscript>
 <div class="container-fluid">
-	<div class="col-lg-12">
-		<div class="card">
-			<div class="card-body">
-				<div class="col-md-12">
-					<hr>
+
+				
+					
 						<div class="row">
 							
 						</div>
@@ -53,15 +51,15 @@
 										<th>Rent</th>
 										<th>Vat</th>
 										<th>Payable Months</th>
-										<th>Payable Amount</th>
 										<th>Rent Paid</th>
 										<th>Vat Paid</th>
 										<th>Service Fee Paid</th>
+										<th>Total Paid</th>
 										<th>Rent Bal</th>
 										<th>Vat Bal</th>
 										<th>Service Fee Bal</th>
-										<th>Description</th>							
-										<th>Last Payment</th>
+										<th>Total Bal</th>							
+										
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -85,15 +83,23 @@
 
 										$payable_vat = $row['vat_paid'] * $months;
 										$vat_paid = $conn->query("SELECT SUM(vat_paid) as paid FROM payments where tenant_id =".$row['id']);
+										$vat_paid = $vat_paid->num_rows > 0 ? $vat_paid->fetch_array()['paid'] : 0;
+
+										$payable_service_charge = $row['service_charge_paid'] * $months;
+										$service_charge_paid = $conn->query("SELECT SUM(service_charge_paid) as paid FROM payments where tenant_id =".$row['id']);
+										$service_charge_paid = $service_charge_paid->num_rows > 0 ? $service_charge_paid->fetch_array()['$service_charge_paid'] : 0;
+
+										$payable_vat = $row['vat_paid'] * $months;
+										$vat_paid = $conn->query("SELECT SUM(vat_paid) as paid FROM payments where tenant_id =".$row['id']);
 										$last_payment = $conn->query("SELECT * FROM payments where tenant_id =".$row['id']." order by unix_timestamp(date_created) desc limit 1");
 										$vat_paid = $vat_paid->num_rows > 0 ? $vat_paid->fetch_array()['paid'] : 0;
 										$last_payment = $last_payment->num_rows > 0 ? date("M d, Y",strtotime($last_payment->fetch_array()['date_created'])) : 'N/A';
 										$outstanding_vat = - $vat_paid - $payable_vat;
 
-										$payable = $row['price'] * $months;
-										$paid = $conn->query("SELECT SUM(amount) as paid FROM payments where tenant_id =".$row['id']);
+										$payable_service_charge = $row['service_charge_paid'] * $months;
+										$service_charge_paid = $conn->query("SELECT SUM(service_charge_paid) as paid FROM payments where tenant_id =".$row['id']);
 										$last_payment = $conn->query("SELECT * FROM payments where tenant_id =".$row['id']." order by unix_timestamp(date_created) desc limit 1");
-										$paid = $paid->num_rows > 0 ? $paid->fetch_array()['paid'] : 0;
+										$service_charge_paid = $paid->num_rows > 0 ? $$service_charge_paid->fetch_array()['service_charge_paid'] : 0;
 										$last_payment = $last_payment->num_rows > 0 ? date("M d, Y",strtotime($last_payment->fetch_array()['date_created'])) : 'N/A';
 										$outstanding_rent = - $paid - $payable ;
 
@@ -106,15 +112,15 @@
 										<td class="text-right"><?php echo number_format($row['price'],2) ?></td>
 										<td class="text-right"><?php echo number_format($row['price'],2) ?></td>
 										<td class="text-right"><?php echo abs($months).' mo/s' ?></td>
-										<td class="text-right"><?php echo number_format(abs($payable),2) ?></td>
 										<td class="text-right"><?php echo number_format($paid,2) ?></td>
 										<td class="text-right"><?php echo number_format($vat_paid,2) ?></td>
-										<td class="text-right"><?php echo number_format($paid,2) ?></td>
+										<td class="text-right"><?php echo number_format($service_charge_paid,2) ?></td>
+										<td class="text-right"><?php echo number_format(abs($payable),2) ?></td>
 										<td class="text-right"><?php echo number_format($outstanding_rent,2) ?></td>
 										<td class="text-right"><?php echo number_format($outstanding_rent,2) ?></td>
 										<td class="text-right"><?php echo number_format($outstanding_rent,2) ?></td>
 										<td><?php echo $row['invoice'] ?></td>
-										<td><?php echo date('M d,Y',strtotime($last_payment)) ?></td>
+										
 										
 										<td>
 											<a href="index.php?page=balance_receipt&id=<?php echo $row['id'] ?>" type="button" class="btn btn-outline-primary">

@@ -27,12 +27,9 @@ foreach($qry->fetch_array() as $k => $val){
         <div class="form-group" id="details">
             
         </div>
+        
         <div class="form-group">
             <label for="" class="control-label">Description: </label>
-            <input type="text" class="form-control" name="description"  value="<?php echo isset($description) ? $description :'' ?>" >
-        </div>
-        <div class="form-group">
-            <label for="" class="control-label">Comment: </label>
             <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
         </div>
       <div class="form-group">
@@ -56,11 +53,11 @@ foreach($qry->fetch_array() as $k => $val){
         <large><b>Details</b></large>
         <hr>
         <p>Tenant: <b class="tname"></b></p>
-        <p>Monthly Rental Rate: <b class="price"></b></p>
-        <p>Outstanding Balance: <b class="outstanding"></b></p>
-        <p>Total Paid: <b class="total_paid"></b></p>
+        <p>Rent: <b class="price"></b></p>
+        <p>Vat: <b class="vat"></b></p>
+        
         <p>Rent Started: <b class='rent_started'></b></p>
-        <p>Payable Months: <b class="payable_months"></b></p>
+        
         <hr>
     </div>
 </div>
@@ -89,9 +86,9 @@ foreach($qry->fetch_array() as $k => $val){
                 details.find('.tname').text(resp.name)
                 details.find('.price').text(resp.price)
                 details.find('.outstanding').text(resp.outstanding)
-                details.find('.total_paid').text(resp.paid)
+                
                 details.find('.rent_started').text(resp.rent_started)
-                details.find('.payable_months').text(resp.months)
+               
                 console.log(details.html())
                 $('#details').html(details)
             }

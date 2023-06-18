@@ -102,8 +102,9 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										$rent_total += $row['amount'];
 										$vat_total += $row['vat_paid'];
 										$servive_charge_total += $row['service_charge_paid'];
-										$total_amount = $row['service_charge_paid'] +  $row['vat_paid'];
-
+										$total_receipt = $row['amount'] +  $row['service_charge_paid'] +  $row['vat_paid'];
+										$month_total = $rent_total + $vat_total + $servive_charge_total
+										
 
 										//$total_query = mysqli_query($con, "SELECT 'amount,','vat_paid', 'service_charge_paid', SUM('amount' + 'vat_paid' + 'service_charge_paid') as Total FROM payments WHERE id = tenant_id ");
 										//$total_result = mysqli_fetch_array($total_query);
@@ -119,7 +120,7 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										<td class="text-right"><?php echo number_format($row['amount'],2) ?></td>
 										<td class="text-right"><?php echo number_format($row['vat_paid'],2) ?></td>
 										<td class="text-right"><?php echo number_format($row['service_charge_paid'],2) ?></td>
-										<td class="text-right"><?php echo number_format($row['service_charge_paid'],2) ?></td>
+										<td class="text-right"><?php echo number_format($total_receipt,2) ?></td>
 										<td>
 											<a href="index.php?page=rent_receipt&id=<?php echo $row['tenant_id'] ?>"  type="button" class="btn btn-outline-primary" style="position-center">
 												RENT
@@ -149,7 +150,7 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										<th class='text-right'><?php echo number_format($rent_total,2) ?></th>
 										<th class='text-right'><?php echo number_format($vat_total,2) ?></th>
 										<th class='text-right'><?php echo number_format($servive_charge_total,2) ?></th>
-										<th class='text-right'><?php echo number_format($total_amount,2) ?></th>
+										<th class='text-right'><?php echo number_format($month_total,2) ?></th>
 									</tr>
 									
 								</tfoot>

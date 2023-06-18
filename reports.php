@@ -22,7 +22,7 @@ include 'db_connect.php';
 						<div class="col-sm-4">
 							<div class="card border-primary">
 								<div class="card-body bg-light">
-									<h4><b>Tenants Balance Report</b></h4>
+									<h4><b>Tenants Balance Report</b></h4>   
 								</div>
 								<div class="card-footer">
 									<div class="col-md-12">

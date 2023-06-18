@@ -30,7 +30,7 @@
 									<th class="">Vat Bal</th>
 									<th class="">Service Charge Bal</th>
 									<th class="">Total Balance</th>
-									<th class="">Description</th>
+									
 									<th class="">Last Payment</th>
 									<th class="text-center">Action</th>
 								</tr>
@@ -76,9 +76,7 @@
 									<td class="text-right">
 										 <p> <b><?php echo number_format($outstanding,2) ?></b></p>
 									</td>
-									<td class="">
-										 <p> <b><?php echo $row['description'] ?></b></p>
-									</td>
+									
 									<td class="">
 										 <p><b><?php echo  $last_payment ?></b></p>
 									</td>

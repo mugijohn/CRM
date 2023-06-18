@@ -302,7 +302,7 @@ Class Action {
 			}
 		}
 		$months = abs(strtotime(date('Y-m-d')." 23:59:59") - strtotime($date_in." 23:59:59"));
-		$months = floor(($months) / (30*60*60*24));
+		$months = floor(($months) / (20*60*60*24));
 		$data['months'] = $months;
 		$payable= abs($price * $months);
 		$data['payable'] = number_format($payable,2);
